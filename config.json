@@ -4,13 +4,12 @@
     },
     "inbounds": [
         {
-            "listen": "0.0.0.0",
             "port": 443,
             "protocol": "vless",
             "settings": {
                 "clients": [
                     {
-                        "id": "c51f61df-24db-4779-a846-518cfbdf7f95",
+                        "id": "c51f61df-24db-4779-a846-518cfbdf7f95", // 填写你的 UUID
                         "level": 0,
                         "email": "love@v2fly.org"
                     }
@@ -18,11 +17,7 @@
                 "decryption": "none",
                 "fallbacks": [
                     {
-                        "dest": 8001
-                    },
-                    {
-                        "alpn": "h2",
-                        "dest": 8002
+                        "dest": 80
                     }
                 ]
             },
@@ -30,15 +25,13 @@
                 "network": "tcp",
                 "security": "tls",
                 "tlsSettings": {
-                    "serverName": "dfgb345.tk",
                     "alpn": [
-                        "h2",
                         "http/1.1"
                     ],
                     "certificates": [
                         {
-                            "certificateFile": "/etc/ssl/certs/dfgb345.tk.crt",
-                            "keyFile": "/etc/ssl/private/dfgb345.tk_key.key"
+                            "certificateFile": "/etc/ssl/certs/dfgb345.tk.crt", // 换成你的证书，绝对路径
+                            "keyFile": "/etc/ssl/private/dfgb345.tk_key.key" // 换成你的私钥，绝对路径
                         }
                     ]
                 }
@@ -47,8 +40,7 @@
     ],
     "outbounds": [
         {
-            "protocol": "freedom",
-            "tag": "direct"
+            "protocol": "freedom"
         }
     ]
 }
